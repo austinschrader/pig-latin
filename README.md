@@ -7,11 +7,12 @@
 | If a word begins with 2 or more consonants, it moves all the first consecutive consonants to the end and adds "ay" | craft | aftcay |
 | "Move 'qu' to the end together if it starts the word" | quest | estquay |
 | If first consonants include "qu", move the consecutive consonants to the end | squeal | ealsquay |
-| If y is the first character, treat y as a consonant | yes | esyay
+| If y is the first character, treat y as a consonant | yes | esyay |
+| It will apply these rules to each word in a string of multiple words | What is your question? | atwhay isway ouryay estionquay?
 
 
 Describe: `pigLatin()`
-Test: "It will add 'way' to the end of words that begin with a vowel"
+Test: "It will add 'way' to the end of a word that begin with a vowel"
 Expect(pigLatin("a")).toEqual("away");
 
 Test: "If a word begins with a consonant, it moves the first consonant to the end and adds "ay"
@@ -29,11 +30,5 @@ Expect(pigLatin("squeal").toEqual("ealsquayh"))
 Test: "If y is the first character, treat y as a consonant"
 Expect(pigLatin("yes").toEqual("esyay")
 
-
-<!-- If a word begins with a vowel, add "way" to the end -->
-
-<!-- If words begin with 1+ consonant, move all of the first consecutive consonants to the end and add "ay" -->
-
-<!-- If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first! -->
-
-<!-- For words beginning with "y", treat "y" as a consonant. -->
+Test: "It will apply these rules to each word in a string of multiple words"
+Expect(pigLatin("What is your question?)).toEqual("atwhay isway ouryay estionquay?)
